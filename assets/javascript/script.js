@@ -30,6 +30,15 @@ function writePassword() {
 
 
   alert('Your password will have ' +confirmLength + ' characters'); 
+
+  //Confirm other parameters 
+  var confirmCapitol = confirm("Click Confirm if you would like capitol letters in Password");
+  var confirmLowercase = confirm("Click Confirm if you would like lowercase letters in your Password");
+  var confirmSpecial = confirm("Click Confirm if you would like special characters in your Passowrd");
+  var confirmNumber = confirm("Click Confirm if you would like numbers in your password");
+
+  
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
