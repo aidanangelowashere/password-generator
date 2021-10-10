@@ -10,17 +10,26 @@ var lowerLetter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 var capitolLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var specialCharacter = ["!", "@", "#", "$", "%", "&", "*", "<", ">", "?", "+", "-"];
 
-var confirmLength = "";
+var confirmLength;
 var confirmCapitol;
 var confirmLowercase;
 var confirmSpecial;
 var confirmNumber;
 
 // Write password to the #password input
+
 function writePassword() {
   var confirmLength= (prompt("How many Characters would you like in your password?"));
 
-  var confirmCapitol
+// Insert while loop to ask how many characters will be included
+
+  if(confirmLength < 8 || confirmLength > 128 ) {
+    alert("Password must be at least 8 characters and no more than 128, Please try again!");
+    var confirmLength =(prompt("How Many Characters would you like in your password?"));
+  }
+
+
+  alert('Your password will have ' +confirmLength + ' characters'); 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -30,3 +39,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
